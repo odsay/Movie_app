@@ -7,6 +7,11 @@ function Food({ name , image }){
     </div>;
 }
 
+// const renderFood = dish => <Food name={dish.name} image={dish.image} />;
+function renderFood(dish) {
+  return <Food name={dish.name} image={dish.image} />;
+}
+
 const foodILike = [
   {
     name: 'Kimchi',
@@ -32,9 +37,10 @@ const foodILike = [
 ];
 
 function App() {
+  console.log(foodILike.map(renderFood));
   return (
     <div>
-      {foodILike.map( dish =>(<Food name={dish.name} image={dish.image} />))}
+      {foodILike.map(renderFood)}
     </div>
   );
 }
