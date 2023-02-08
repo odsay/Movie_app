@@ -1,16 +1,40 @@
 import React from "react";
 
-function Food({ fav }){
-  return <h1>I like {fav}.</h1>;
+function Food({ name , image }){
+  return <div>
+    <h1>I like {name}.</h1>
+    <img src={image} width='400' />
+    </div>;
 }
+
+const foodILike = [
+  {
+    name: 'Kimchi',
+    image: 'https://health.chosun.com/site/data/img_dir/2020/07/21/2020072103114_0.jpg',
+  },
+  {
+    name: 'Samgyepsal',
+    image: 'https://sitem.ssgcdn.com/04/30/92/item/1000047923004_i1_1100.jpg',
+  },
+  {
+    name: 'Bibimbap',
+    image: 'https://blog.kakaocdn.net/dn/I2AZS/btqK6NWoIvs/UVkqDQEo4Ez1J7NmEmPi60/img.jpg',
+  },
+  {
+    name: 'Doncasu',
+    image: 'https://t1.daumcdn.net/cfile/tistory/9951473F5D4633FD2C',
+  },
+  {
+    name: 'Kimbap',
+    image: 'https://t1.daumcdn.net/cfile/tistory/262BE44C590FD33514',
+  },
+
+];
 
 function App() {
   return (
     <div>
-      <h1>Helllllllo!!!</h1>
-      <Food fav="Kimchi" />
-      <Food fav="Udong" />
-      <Food fav="Ramen" />
+      {foodILike.map( dish =>(<Food name={dish.name} image={dish.image} />))}
     </div>
   );
 }
